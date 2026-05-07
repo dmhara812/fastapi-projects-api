@@ -7,6 +7,11 @@ from app.core.config import get_settings
 
 settings = get_settings()
 
+
+class Base(DeclarativeBase):
+    pass
+
+
 engine = create_engine(
     settings.database_url,
     pool_pre_ping=True,
@@ -17,10 +22,6 @@ SessionLocal = sessionmaker(
     autoflush=False,
     bind=engine,
 )
-
-
-class Base(DeclarativeBase):
-    pass
 
 
 def get_db() -> Generator[Session, None, None]:
