@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+app/__init__.py
+app/api/__init__.py
+app/core/__init__.py
+app/models/__init__.py
+app/repositories/__init__.py
+app/schemas/__init__.py
+app/services/__init__.py
+app/tests/__init__.py
+fastapi_projects_api.egg-info/PKG-INFO
+fastapi_projects_api.egg-info/SOURCES.txt
+fastapi_projects_api.egg-info/dependency_links.txt
+fastapi_projects_api.egg-info/requires.txt
+fastapi_projects_api.egg-info/top_level.txt
