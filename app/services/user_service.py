@@ -2,6 +2,7 @@ from uuid import UUID
 
 from sqlalchemy.orm import Session
 
+from app.core.security import get_password_hash
 from app.models.user import User
 from app.repositories.user_repository import UserRepository
 from app.schemas.user import UserCreate, UserUpdate
@@ -18,16 +19,21 @@ class UserService:
     def __init__(self, db: Session) -> None:
         self.repository = UserRepository(db)
 
-    def create_user(self, user_data: UserCreate, hashed_password: str) -> User:
+    def create_user(self, user_data: UserCreate) -> User:
         """Cria um usuário garantindo que o e-mail seja único.
 
-        Recebemos `hashed_password` como argumento porque a implementação
-        definitiva de hashing ficará em `core/security.py` na Etapa 7.
+        A senha recebida em texto puro vem do schema `UserCreate`.
+        Antes de persistir, transformamos essa senha em hash usando
+        `get_password_hash`.
+
+        A senha original nunca deve ser salva no banco.
         """
         existing_user = self.repository.get_by_email(user_data.email)
 
         if existing_user is not None:
             raise ConflictError("Email already registered")
+
+        hashed_password = get_password_hash(user_data.password)
 
         return self.repository.create(
             user_data=user_data,
