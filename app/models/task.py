@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-import enum
 from datetime import date
+from enum import StrEnum
 from typing import TYPE_CHECKING
 from uuid import UUID
 
@@ -15,13 +15,13 @@ if TYPE_CHECKING:
     from app.models.project import Project
 
 
-class TaskStatus(str, enum.Enum):
+class TaskStatus(StrEnum):
     TODO = "todo"
     IN_PROGRESS = "in_progress"
     DONE = "done"
 
 
-class TaskPriority(str, enum.Enum):
+class TaskPriority(StrEnum):
     LOW = "low"
     MEDIUM = "medium"
     HIGH = "high"

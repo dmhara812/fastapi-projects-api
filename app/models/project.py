@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-import enum
+from enum import StrEnum
 from typing import TYPE_CHECKING
 from uuid import UUID
 
@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from app.models.user import User
 
 
-class ProjectStatus(str, enum.Enum):
+class ProjectStatus(StrEnum):
     ACTIVE = "active"
     ARCHIVED = "archived"
 
