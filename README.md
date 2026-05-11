@@ -42,6 +42,7 @@ Crie e ative o ambiente virtual:
 ```bash
 python -m venv .venv
 source .venv/bin/activate
+.venv\Scripts\Activate.ps1
 ```
 
 Instale dependências:
