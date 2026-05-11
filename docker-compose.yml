@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: projects-api
     environment:
-      APP_NAME: "FastAPI Projects API"
+      APP_NAME: "KanbanCore API"
       APP_ENV: "docker"
       APP_DEBUG: "true"
       APP_VERSION: "0.1.0"

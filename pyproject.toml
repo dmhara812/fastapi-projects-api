@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "fastapi-projects-api"
+name = "kanbancore-api"
 version = "0.1.0"
-description = "API REST profissional com FastAPI, PostgreSQL, SQLAlchemy, Alembic, JWT, Docker e testes."
+description = "API REST profissional para gerenciamento de projetos e tarefas com FastAPI, PostgreSQL, SQLAlchemy, Alembic, JWT, Docker e testes."
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
