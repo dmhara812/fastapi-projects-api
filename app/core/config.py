@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     app_version: str = Field(default="0.1.0", alias="APP_VERSION")
 
     database_url: str = Field(alias="DATABASE_URL")
+    test_database_url: str | None = Field(default=None, alias="TEST_DATABASE_URL")
 
     jwt_secret_key: str = Field(alias="JWT_SECRET_KEY")
     jwt_algorithm: str = Field(default="HS256", alias="JWT_ALGORITHM")
